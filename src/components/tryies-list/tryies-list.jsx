@@ -1,28 +1,28 @@
 import classes from './tryies-list.module.scss'
 import { TryRecord } from '../try-record/try-record'
 
-export function TryiesList() {
+export function TryiesList({tryies}) {
 
-    const tryies = [
-        {
-            number: 1,
-            choice: 1234,
-            bulls: 1,
-            cows: 0
-        },
-        {
-            number: 2,
-            choice: 5687,
-            bulls: 3,
-            cows: 1
-        },
-        {
-            number: 3,
-            choice: 4107,
-            bulls: 0,
-            cows: 3
-        },
-    ]
+    // const tryies = [
+    //     {
+    //         number: 1,
+    //         choice: 1234,
+    //         bulls: 1,
+    //         cows: 0
+    //     },
+    //     {
+    //         number: 2,
+    //         choice: 5687,
+    //         bulls: 3,
+    //         cows: 1
+    //     },
+    //     {
+    //         number: 3,
+    //         choice: 4107,
+    //         bulls: 0,
+    //         cows: 3
+    //     },
+    // ]
 
     return (
         <table className={classes.table}>

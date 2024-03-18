@@ -18,6 +18,14 @@ export function Game({onClick}) {
         const digits = [firstDigit, secondDigit,thirdDigit,fourthDigit]
         const values = digits.map(digit => +(digit.current.value))
         onClick(values)
+        onClear()
+    }
+
+    function onChange(e){
+        if(isNaN(+(e.target.value)) || e.target.value === " "){
+            e.target.value = ''
+            return
+        }
     }
 
     return (
@@ -28,21 +36,25 @@ export function Game({onClick}) {
                     id='0'
                     maxLength={1}
                     ref={firstDigit}
+                    onChange={onChange}
                     />
                     <input type="text"
                     id='1'
                     maxLength={1}
                     ref={secondDigit}
+                    onChange={onChange}
                     />
                     <input type="text" 
                     id='2'
                     maxLength={1}
                     ref={thirdDigit}
+                    onChange={onChange}
                     />
                     <input type="text"
                     id='3'
                     maxLength={1}
                     ref={fourthDigit}
+                    onChange={onChange}
                     />
                 </div>
                 <div className={classes.controls}>
@@ -53,9 +65,6 @@ export function Game({onClick}) {
                     <button
                     onClick={onClear}
                     >Clear</button>
-                </div>
-                <div className={classes.controls}>
-                    Тут будут кнопки для старта новой игры и т.д
                 </div>
             </div>
         </div>
